@@ -17,7 +17,7 @@ png(filename='plot1.png', bg='transparent')
 
 # Create the plot.
 plot(Graphdt$year,Graphdt$TotalEmissions, type='b', main='Total US PM2.5 Emissions 1999 to 2008', 
-     xlab='Year', ylab='Emissions (in tons)', yaxs='r', xaxs='r', cex.axis=0.75)
+     xlab='Year', ylab='Emissions (in tons)', yaxs='r', xaxs='r', lwd=2, cex.axis=0.75)
 
 # Close the plot device.
 dev.off()
