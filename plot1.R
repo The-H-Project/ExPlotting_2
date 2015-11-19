@@ -4,7 +4,7 @@
 #
 # Load required packages. Requires data.table 1.9.6 
 library(data.table)
-#
+
 # Read the data file, and convert it to a data table.
 NEIdt <- data.table(readRDS('../summarySCC_PM25.rds'))
 
@@ -12,12 +12,15 @@ NEIdt <- data.table(readRDS('../summarySCC_PM25.rds'))
 Graphdt <- NEIdt[,sum(Emissions), by=year]
 names(Graphdt)[2] <- 'TotalEmissions'
 
+# Reduce the y-axis scale.
+Graphdt[,TotalEmissions := TotalEmissions / 1000]
+
 # Open the png plot device.
 png(filename='plot1.png', bg='transparent')
 
 # Create the plot.
 plot(Graphdt$year,Graphdt$TotalEmissions, type='b', main='Total US PM2.5 Emissions 1999 to 2008', 
-     xlab='Year', ylab='Emissions (in tons)', yaxs='r', xaxs='r', lwd=2, cex.axis=0.75)
+     xlab='Year', ylab='Emissions (in thousands of tons)', yaxs='r', xaxs='r', lwd=2, cex.axis=0.75)
 
 # Close the plot device.
 dev.off()
