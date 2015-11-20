@@ -30,7 +30,7 @@ Graphdt[,TotalEmissions := TotalEmissions / 1000]
 
 # Create the plot.
 plot4 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions)) +
-         geom_line(size=1) + ggtitle('Total Coal Emissions 1999 to 2008') + 
+         geom_line(size=1) + ggtitle('Total Coal PM2.5 Emissions 1999 to 2008') + 
          ylab('Total Emissions (in thousands of tons)') + 
          theme(plot.title=element_text(face='bold', size=18),
                axis.title.y=element_text(size=16), 
