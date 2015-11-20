@@ -29,14 +29,12 @@ names(Graphdt)[2] <- 'TotalEmissions'
 rm(NEIdt, SCCdt, NEIsubset, SCCsubset)
 
 # Create the plot.
-plot5 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions))
-plot5 <- plot5 + geom_line(size=1)
-plot5 <- plot5 + ggtitle('Total Vehicular Emissions in Baltimore City 1999 to 2008') + 
+plot5 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions)) + geom_line(size=1) +
+         ggtitle('Total Vehicular Emissions in Baltimore City 1999 to 2008') + 
          ylab('Total Emissions') +
-         theme(plot.title=element_text(family='Times', face='bold', size=18)) +
-         theme(axis.title.y=element_text(size=16)) +
-         theme(axis.text.y=element_text(size=14))
-
+         theme(plot.title=element_text(family='Times', face='bold', size=18),
+               axis.title.y=element_text(size=16), 
+               axis.text.y=element_text(size=14))
 
 # Save the plot to a png file, but make it larger so the x-axis labels are visible.
 png(filename='plot5.png', bg='transparent', width=960, height=960)

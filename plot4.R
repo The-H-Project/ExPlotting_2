@@ -29,13 +29,12 @@ rm(NEIdt, SCCdt, NEIsubset, SCCsubset)
 Graphdt[,TotalEmissions := TotalEmissions / 1000]
 
 # Create the plot.
-plot4 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions))
-plot4 <- plot4 + geom_line(size=1)
-plot4 <- plot4 + ggtitle('Total Coal Emissions 1999 to 2008') + 
-     ylab('Total Emissions (in thousands of tons)') + 
-     theme(plot.title=element_text(face='bold', size=18)) +
-     theme(axis.title.y=element_text(size=16)) +
-     theme(axis.text.y=element_text(size=14))
+plot4 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions)) +
+         geom_line(size=1) + ggtitle('Total Coal Emissions 1999 to 2008') + 
+         ylab('Total Emissions (in thousands of tons)') + 
+         theme(plot.title=element_text(face='bold', size=18),
+               axis.title.y=element_text(size=16), 
+               axis.text.y=element_text(size=14))
 
 # Save the plot to a png file, but make it larger so the x-axis labels are visible.
 png(filename='plot4.png', bg='transparent', width=960, height=960)
