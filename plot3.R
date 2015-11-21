@@ -20,8 +20,10 @@ names(Graphdt)[3] <- 'TotalEmissions'
 Graphdt$type <- as.factor(Graphdt$type)
 
 # Create the plot using qplot.
-plot3 <- qplot(year, TotalEmissions, data=Graphdt, color=type, main='Emissions by Type 1999 to 2008', 
-               facets= . ~ type, geom='line', size=I(2))
+plot3 <- qplot(year, TotalEmissions, data=Graphdt, color=type, 
+               main = 'Emissions by Type 1999 to 2008', 
+               ylab = 'Total Emissions (in tons)',
+               facets = . ~ type, geom ='line', size=I(2))
 
 # Save the plot to a png file, but make it larger so the x-axis labels are visible.
 png(filename='plot3.png', bg='transparent', width=960, height=960)

@@ -39,7 +39,7 @@ rm(NEIdt, SCCdt, BCNEIsubset, LANEIsubset, SCCsubset, BCGraphdt, LAGraphdt)
 plot6 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions, Group=County, color=County)) +
          geom_line(size=2) +
          ggtitle('Total Vehicular PM2.5 Emissions 1999 to 2008: Baltimore City vs Los Angeles County') + 
-         ylab('Total Emissions') +
+         ylab('Total Emissions (in tons)') +
          theme(plot.title=element_text(face='bold', size=18), 
                axis.title.y=element_text(size=16), 
                axis.text.y=element_text(size=14),

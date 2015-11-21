@@ -31,7 +31,7 @@ rm(NEIdt, SCCdt, NEIsubset, SCCsubset)
 # Create the plot.
 plot5 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions)) + geom_line(size=1) +
          ggtitle('Total Vehicular PM2.5 Emissions in Baltimore City 1999 to 2008') + 
-         ylab('Total Emissions') +
+         ylab('Total Emissions (in tons)') +
          theme(plot.title=element_text(family='Times', face='bold', size=18),
                axis.title.y=element_text(size=16), 
                axis.text.y=element_text(size=14))
