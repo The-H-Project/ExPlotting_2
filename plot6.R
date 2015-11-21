@@ -36,20 +36,21 @@ names(Graphdt)[2] <- 'TotalEmissions'
 rm(NEIdt, SCCdt, BCNEIsubset, LANEIsubset, SCCsubset, BCGraphdt, LAGraphdt)
 
 # Create the plot.
+# Place the legend in the middle of the plot because there's nothing there.
 plot6 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions, Group=County, color=County)) +
          geom_line(size=2) +
-         ggtitle('Total Vehicular PM2.5 Emissions 1999 to 2008: Baltimore City vs Los Angeles County') + 
+         ggtitle('Total Vehicular PM2.5 Emissions 1999 to 2008:\n Baltimore City vs Los Angeles County') + 
          ylab('Total Emissions (in tons)') +
-         theme(plot.title=element_text(face='bold', size=18), 
+         theme(plot.title=element_text(face='bold', size=15), 
                axis.title.y=element_text(size=16), 
                axis.text.y=element_text(size=14),
                legend.position=c(0.5,0.5),
-               legend.title=element_text(size=18),
+               legend.title=element_text(size=15),
                legend.text=element_text(size=14),
-               legend.key.size=unit(36,'points'))
+               legend.key.size=unit(18,'points'))
 
-# Save the plot to a png file, but make it larger so the x-axis labels are visible.
-png(filename='plot6.png', bg='transparent', width=960, height=960)
+# Save the plot to a png file.
+png(filename='plot6.png', bg='transparent')
 print(plot6)
 
 # Close the plot device.

@@ -36,8 +36,8 @@ plot4 <- ggplot(data=Graphdt, aes(x=year, y=TotalEmissions)) +
                axis.title.y=element_text(size=16), 
                axis.text.y=element_text(size=14))
 
-# Save the plot to a png file, but make it larger so the x-axis labels are visible.
-png(filename='plot4.png', bg='transparent', width=960, height=960)
+# Save the plot to a png file.
+png(filename='plot4.png', bg='transparent')
 print(plot4)
 
 # Close the plot device.
